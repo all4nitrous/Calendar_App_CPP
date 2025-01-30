@@ -25,20 +25,29 @@ int numberOfDays (int monthNumber, int year) {
         case 7:
         case 9:
         case 11: return(31);
-            if (year % 400 == 0 || (year % 4 == 0 && year %100 != 0))
-                return (29);
-            else
-                return (28);
-            break;
+           
             case 3:
             case 5:
             case 8:
             case 10: return(30);
             break;
-
-
-
-
+            case 1: // February
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+                    return 29;
+                else
+                    return 28;
     }
+    return -1; // Default return for invalid month
 
+}
+
+void printCalendar(int year)
+{
+    cout << "\t\t\t Calender - Year " << year;
+    int days;
+    int current = dayNumber (1, 1, year);
+    for (int i = 0; i < 12; i++)
+    {
+        days = numberOfDays (i, year);
+    }
 }
